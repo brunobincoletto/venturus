@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<title>Venturus Front-End Test</title>
+	<!-- CRITICAL CSS -->
+	<style>body{background:#FFF;}#wrapper{opacity:0;}</style>
+	<link rel="dns-prefetch" href="//localhost/venturus">
+	<meta name="description" content="Hello, thank you for taking the time to apply for a position within our team. In order to evaluate your skills we will ask you to build a small application that covers most of
+	our daily challenges.">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Language" content="pt-br">
+	<meta name="robots" content="follow">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="HandheldFriendly" content="true">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="x-dns-prefetch-control" value="on">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Venturus Front-End Test">
+	<link rel="preload" href="assets/css/main.css" as="style" crossorigin>
+	<link rel="preload" href="assets/js/main.js" as="script" crossorigin>
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#1ABC9C">
+	<meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#1ABC9C">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		
+		<header>
+			<div class="container">
+				<h1><a href="./index.html" title="Back to Home - Venturus Sports"><span><i class="fas fa-volleyball-ball"></i></span>Venturus Sports</a></h1>
+				<ul id="usertop">
+					<li>
+						<span>JB</span><a href="#">Jason Bourn <i class="fas fa-angle-right"></i></a>
+						<ul>
+							<li><a href="#">Friend List</a></li>
+							<li><a href="#">Saved Items</a></li>
+							<li><a href="#">Notifications</a></li>
+							<li><a href="#">User Preferences</a></li>
+							<li><a href="#">Log Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<section class="breadcrumb">
+			<div class="container">
+				<ol id="bcrumb">
+					<li><a href="./index.html"><i class="fas fa-home"></i></a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li id="expand"><a href="#">...</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 1</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 2</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 3</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 4</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 5</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 6</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 7</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 8</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#">Page Name 9</a></li>
+					<li><i class="fas fa-angle-right"></i></li>
+					<li><a href="#" class="active">Current Page</a></li>
+				</ol>
+			</div>
+		</section>
+		<section id="plates">
+			<div class="container">
+				<ul>
+					<li><i class="fas fa-puzzle-piece"></i> Sport Type <span>Cycling</span></li>
+					<li><i class="fas fa-trophy"></i>Mode <span>Advanced</span></li>
+					<li><i class="fas fa-map-signs"></i>Route <span>30 miles</span></li>
+				</ul>
+			</div>
+		</section>
+		<section id="app">
+			<div class="container">
+				<h2><span>{{title}}</span></h2>
+				<div id="search"><i class="fas fa-search"></i><input type="text" id="sinput" placeholder="Filter table content"></div>
+				<div class="row">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="datatable">
+						<tr>
+							<th scope="col">Username</th>
+							<th scope="col">Name</th>
+							<th scope="col">E-mail</th>
+							<th scope="col">City</th>
+							<th scope="col">Ride in Group</th>
+							<th scope="col">Day of the week</th>
+							<th scope="col">Posts</th>
+							<th scope="col">Albums</th>
+							<th scope="col">Photos</th>
+							<th scope="col">&nbsp;</th>
+						</tr>
+						<tr v-for="user in users">
+							<td>{{ user.username }}</td>
+							<td>{{ user.name }}</td>
+							<td class="email"><a :href="`mailto:${ user.email }`">{{ user.email }}</a></td>
+							<td><a :href="`https://www.google.com.br/maps/@${ user.address.geo.lat },${ user.address.geo.lng }z`" target="_blank">{{ user.address.city }} </a></td>
+							<td>Always</td>
+							<td>Every day</td>
+							<td><a href="#">3</a></td>
+							<td><a href="#">5</a></td>
+							<td>5</td>
+							<td class="remove"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</section>
+		
+		<section id="registration">
+			<div class="container">
+				<h2><span>Registration</span></h2>
+				<div class="row">
+					<div class="col-4">
+						<h3>Need help?</h3>
+						<i class="far fa-life-ring"></i>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+					</div>
+					<div class="col-4">
+						<h3>Why register?</h3>
+						<i class="fas fa-heartbeat"></i>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod empor incididunt ut labore et dolore magna.</p>
+					</div>
+					<div class="col-4">
+						<h3>What people are saying...</h3>
+						<i class="far fa-smile"></i>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+					</div>
+				</div>
+				<hr>
+				<form action="post">
+					<div class="row">
+						<div class="col-6">
+							<label for="username">Username
+								<input type="text">
+								<span class="ttip">Enter your username.</span>
+							</label>
+							<label for="username">Name
+								<input type="text">
+								<span class="ttip">Enter your first and last name.</span>
+							</label>
+							<label for="username">E-mail
+								<input type="text">
+								<span class="ttip">Enter your e-mail.</span>
+							</label>
+
+						</div>
+						<div class="col-6">
+							<label for="username">City
+								<small>optional</small>
+								<input type="text">
+								<span class="ttip">Enter your location city.</span>
+							</label>
+							<label for="group">Ride in Group?</label>
+							<div class="radio">
+								<label for="always">
+									<input type="radio" id="always" name="group" checked> Always
+									<span>&nbsp;</span>
+								</label>
+								<label for="sometimes">
+									<input type="radio" id="sometimes" name="group"> Sometimes
+									<span>&nbsp;</span>
+								</label>
+								<label for="never">
+									<input type="radio" id="never" name="group"> Never
+									<span>&nbsp;</span>
+								</label>
+							</div>
+							<label for="dotw" class="clear">Days of the week</label>
+							<div class="checkbox">
+								<label for="sun">
+									<input type="checkbox" id="sun" name="group"> Sun
+									<span>&nbsp;</span>
+								</label>
+								<label for="mon">
+									<input type="checkbox" id="mon" name="group"> Mon
+									<span>&nbsp;</span>
+								</label>
+								<label for="tue">
+									<input type="checkbox" id="tue" name="group"> Tue
+									<span>&nbsp;</span>
+								</label>
+								<label for="wed">
+									<input type="checkbox" id="wed" name="group" checked> Wed
+									<span>&nbsp;</span>
+								</label>
+								<label for="thu">
+									<input type="checkbox" id="thu" name="group" checked> Thu
+									<span>&nbsp;</span>
+								</label>
+								<label for="fri">
+									<input type="checkbox" id="fri" name="group"> Fri
+									<span>&nbsp;</span>
+								</label>
+								<label for="sat">
+									<input type="checkbox" id="sat" name="group"> Sat
+									<span>&nbsp;</span>
+								</label>
+							</div>
+						</div>
+						<div class="col-12 btn">
+							<button type="submit">Save</button> <a href="#">Discard</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/regular.css" integrity="sha384-avJt9MoJH2rB4PKRsJRHZv7yiFZn8LrnXuzvmZoD3fh1aL6aM6s0BBcnCvBe6XSD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" type="text/css" media="all">	
+	<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</head>

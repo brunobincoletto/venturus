@@ -1,0 +1,331 @@
+@import "mixins";   
+$dgreen: #1ABC9C;
+$lgreen: #BAEBE1;
+@import "grid"; 
+
+* {
+	letter-spacing: 0.01em; text-decoration: none; outline: 0px; margin: 0px; padding: 0px; border:0px; font-family: $font-family; list-style: none; color: #333;
+}
+
+*:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+} 
+
+br.clear {
+	clear: left; height: 0px; line-height: 0px; 
+}
+
+::-webkit-scrollbar {
+	width:  8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $dgreen;
+}
+
+::-webkit-scrollbar-track {
+	background: #CCC;
+}
+
+a {
+	text-decoration: none;
+	@include transition(color .5s ease-in); color: #333; @include transition(color .5s ease-in-out); 
+}
+
+a:hover {
+	color: $dgreen;
+}
+
+input {
+	@include border-radius(5px); border:1px solid #CCC; padding: 7px 10px; @include transition(border-color .5s ease-in-out); 
+}
+
+input:focus,
+input:hover {
+	border-color: $dgreen; 
+}
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h2 {
+	position: relative; z-index: 1; text-align:left; clear: both; font-size: 32px; width: 100%; float: left;  margin-bottom: 30px;
+	&:before {
+		border-top: 2px solid #F1F1F1; content:""; margin: 0 auto; position: absolute; top: 60%; left: 0; right: 0; bottom: 0; width: 100%; z-index: -1;
+	}
+	span {
+		background: #FFF; padding-right: 40px;
+	}
+}
+hr {
+	background: #999; height: 1px; display: block; width: 85%; margin: 30px auto;
+}
+
+#wrapper {
+	opacity: 1;
+	@include transition(opacity .5s ease-in);
+} 
+
+body { 
+	scrollbar-face-color: $dgreen;
+	scrollbar-track-color: #CCC;
+}
+
+.clear {
+	clear: left;
+}
+
+.btn {
+	button,
+	a {
+		background: #E3E3E3; color: #333; @include border-radius(5px); border: 0px; display: inline-block; padding: 10px 20px; cursor: pointer; font-size: 14px;  @include transition( background .5s ease-in-out);
+	}
+	button[type=submit] {
+		background: $dgreen; color: #FFF;  font-weight: bold;
+	}
+	button:hover,
+	a:hover {
+		background: $dgreen; color: #FFF;
+	}
+}
+
+header {
+	height: 100px;
+	h1 {
+		width: 60%; height: 100%; line-height: 100px; float: left;
+		a {
+			font-size: 20px; height: 40px; line-height: 40px; display: inline-block; font-weight: normal; 
+			span {
+				background: $dgreen; @include border-radius(5px);  width: 40px; height: 40px; text-align: center; margin-right: 10px; text-align: center; display: inline-block; @include transition(background .5s ease-in-out);
+				i:before {
+					color: #FFF; @include transition(opacity .5s ease-in-out);
+				}
+			}
+		}
+		a:hover {
+			span {
+				background: $lgreen; 
+				i:before {
+					color: $dgreen; 
+				}
+			}
+		}
+	}
+	#usertop {
+		float: right; width: 40%; text-align: right; line-height: 100px;
+		li {
+			width: auto; display: block; position: relative;
+			span {
+				@include border-radius(50px); border:1px solid #333; padding:5px 7px; margin-right: 10px;
+			}
+			a {
+				i {
+					@include transition(rotate .5s ease-in-out);
+				}
+			}
+			ul {
+				@include box-shadow(0px, 0px, 10px, 2px, #DDD); @include border-radius(5px); position: absolute; right: 0px; top: 75px; opacity: 0; @include transition(opacity .5s ease-in-out); line-height: normal; background: #FFF; border:1px solid #CCC; z-index: 5; min-width: 200px; display: none;
+				li {
+					text-align: left;
+					a {
+						padding: 7px 18px; font-size: 14px; display: block; @include transition(background .5s ease-in-out);
+					}
+
+					a:hover {
+						background: #F4F4F4;
+					}
+				}
+				li:last-child {
+					border-top: 1px solid #E3E3E3; margin-top: 5px;
+				}
+			}
+		}
+		li:hover {
+			a {
+				i {
+					-webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); 
+				}
+			}
+			ul {
+				opacity: 1; display: block;
+			}
+		}
+	}
+}
+.breadcrumb {
+	background: #F9F9F9;  display: block;
+	ol {
+		li {
+			display:none; margin-right: 15px; line-height: 40px;
+			a {
+				i.fas:before {
+					color: $dgreen;
+				}
+			}
+			a.active {
+				color: $dgreen;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+		li:nth-child(-n+6),
+		li:nth-last-child(1) {
+			display: inline-block !important;
+		}
+		.expand {
+			a {
+				color: $dgreen; letter-spacing: 1px;
+			}
+		}
+	}
+	ol.expand {
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+#plates {
+	background: $lgreen;
+	ul {
+		li {
+			display: inline-block;  font-size: 14px; white-space: nowrap; width: 16.6%; margin: 2.2em 2em 2.2em 0; min-width: 200px;
+			span {
+				font-size: 14px; display: block; font-size: 24px;
+			}
+			i {
+				float: left; margin-right: 10px;
+			}
+			i:before {
+				font-size: 55px; color: $dgreen; 
+			}
+		}
+	}
+}
+
+#app {
+	padding: 30px 0;
+	h2 {
+		width: 67%; margin-bottom: 40px;
+	}
+}
+
+#search {
+	position: relative; float: right; width: 30%; margin-top: 10px; z-index: 2;
+	input {
+		padding-left: 33px; width: 90%;
+	}
+	i {
+		position: absolute; top: 8px; left: 8px; z-index: 2;
+	}
+	i:before {
+		color: #CCC;
+	}
+}
+
+.datatable {
+	margin: 0 auto 30px auto; overflow: auto;
+	tr {
+		background: #FFF; @include transition(background .5s ease-in-out);
+		th, td {
+			padding: 10px 5px; white-space: nowrap;
+		}
+		th {
+			text-align: left; padding-bottom: 10px; font-weight: normal; background: #FFF;
+		}
+		td {
+			a {
+				color: $dgreen;
+			}
+		}
+
+		.email {
+			text-transform: lowercase;
+		}
+		td.remove {
+			width: 30px; text-align: center;
+			a {
+				display: none; 
+				i:before {
+					color: $dgreen;
+				}
+			}
+		}
+	}
+	tr:nth-child(odd) {
+		background: #F8F8F8;
+	}
+	tr:hover {
+		background: #E3E3E3;
+		td.remove a {
+			display: block;
+		}
+	}
+}
+
+#registration {
+	padding: 0 0 50px 0;
+	h3 {
+		color: $dgreen; font-size: 24px; margin-bottom: 20px;
+	}
+	i {
+		float: left; margin-right: 15px;
+	}
+	i:before {
+		color: $dgreen; font-size: 64px;
+	}
+	p {
+		font-size: 14px; letter-spacing: 0px;
+	}
+	form {
+		label {
+			font-weight: bold; font-size: 14px; display: block; margin-bottom: 10px; position: relative;
+			input {
+				display: block; width: 85%; margin-top: 5px;
+			}
+			input:focus + span.ttip {
+				opacity: 1;
+			}
+			span.ttip {
+				font-weight: normal; font-size: 12px; opacity:0; @include transition(opacity .5s ease-in-out); 
+			}
+			small {
+				position: absolute; top: 0px; left: 80%; font-weight: normal; color: #999; font-size: 12px;
+			}			
+		} 
+		.radio, .checkbox {
+			overflow: auto;
+			label {
+				float: left; margin-right: 3%; font-weight: normal; padding-left: 35px; display: block; line-height: 25px; cursor: pointer; 
+			}
+			input {
+				display: none;
+			}
+			span {
+				width: 25px; height: 25px; border:1px solid $dgreen; @include border-radius(20px); display: block; position: absolute; left: 0px; top: 0px;
+			}
+
+			input[type="radio"]:checked + span:after {
+				content: ' '; width: 14px; height: 14px; border:1px solid $dgreen; @include border-radius(20px); display: block; position: absolute; left: 6px; top: 6px; background: #333;
+			}
+		}
+		.checkbox {
+			span {
+				@include border-radius(5px); 
+			}
+			input[type="checkbox"]:checked + span:after {
+				content: ' '; top: 5px; left: 9px; position: absolute; width: 7px; height: 12px; border: solid #333; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);
+			}
+		}
+		label[for="dotw"] {
+			margin-top: 20px;
+		}
+
+	}
+}
+
+
+@import "mobile"; 
